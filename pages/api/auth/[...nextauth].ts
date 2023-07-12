@@ -7,17 +7,17 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
-import prismadb from '@/lib/prismadb';
+import prismadb from '@/libs/prismadb';
 
 export default nextAuth({
 	providers: [
 		GithubProvider({
-			clientId: process.env.NEXTAUTH_GITHUB_ID || "",
-			clientSecret: process.env.NEXTAUTH_GITHUB_SECRET || "",
+			clientId: process.env.NEXTAUTH_GITHUB_ID || '',
+			clientSecret: process.env.NEXTAUTH_GITHUB_SECRET || '',
 		}),
 		GoogleProvider({
-			clientId: process.env.NEXTAUTH_GOOGLE_ID || "",
-			clientSecret: process.env.NEXTAUTH_GOOGLE_SECRET || "",
+			clientId: process.env.NEXTAUTH_GOOGLE_ID || '',
+			clientSecret: process.env.NEXTAUTH_GOOGLE_SECRET || '',
 		}),
 		Credentials({
 			id: 'credentials',
@@ -70,6 +70,6 @@ export default nextAuth({
 	},
 	jwt: {
 		secret: process.env.NEXTAUTH_JWT_SECRET,
-  },
-  secret: process.env.NEXTAUTH_SECRET,
+	},
+	secret: process.env.NEXTAUTH_SECRET,
 });
