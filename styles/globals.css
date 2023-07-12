@@ -4,9 +4,12 @@
 
 body {
   @apply bg-zinc-900 h-full overflow-x-hidden;
-  color: white
 }
 
-html, #__next {
+#__next {
+  @apply h-full;
+}
+
+html {
   @apply h-full;
 }
